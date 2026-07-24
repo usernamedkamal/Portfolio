@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamal Assila — CV (English)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a56db;
+            --primary-light: #3b82f6;
+            --text: #1e293b;
+            --text-light: #475569;
+            --border: #e2e8f0;
+            --bg-light: #f8fafc;
+            --accent: #0ea5e9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: white;
+            font-size: 10pt;
+        }
+
+        .cv-container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 50px;
+        }
+
+        /* Header */
+        .cv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .cv-header-left h1 {
+            font-size: 26pt;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .cv-header-left h2 {
+            font-size: 12pt;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .cv-header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+        }
+
+        .cv-header-right a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        .cv-header-right p {
+            margin-bottom: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 6px;
+        }
+
+        .cv-header-right i {
+            color: var(--primary-light);
+            width: 14px;
+            text-align: center;
+        }
+
+        /* Summary */
+        .cv-summary {
+            margin-bottom: 20px;
+            padding: 14px 18px;
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .cv-summary p {
+            font-size: 9.5pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Section */
+        .cv-section {
+            margin-bottom: 18px;
+        }
+
+        .cv-section-title {
+            font-size: 12pt;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1.5px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cv-section-title i {
+            font-size: 11pt;
+        }
+
+        /* Experience Entry */
+        .cv-entry {
+            margin-bottom: 16px;
+            page-break-inside: avoid;
+        }
+
+        .cv-entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+        }
+
+        .cv-entry-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .cv-entry-date {
+            font-size: 9pt;
+            font-weight: 600;
+            color: var(--primary-light);
+            white-space: nowrap;
+        }
+
+        .cv-entry-company {
+            font-size: 9.5pt;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .cv-entry-mission {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 6px;
+        }
+
+        .cv-entry ul {
+            padding-left: 16px;
+            margin-bottom: 6px;
+        }
+
+        .cv-entry li {
+            font-size: 9pt;
+            color: var(--text-light);
+            margin-bottom: 2px;
+            line-height: 1.5;
+        }
+
+        .cv-entry li strong {
+            color: var(--text);
+        }
+
+        .cv-projects {
+            margin-top: 6px;
+            padding: 8px 12px;
+            background: var(--bg-light);
+            border-radius: 4px;
+            margin-bottom: 6px;
+        }
+
+        .cv-projects h5 {
+            font-size: 9pt;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .cv-projects li {
+            font-size: 8.5pt;
+        }
+
+        .cv-tech-line {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 4px;
+        }
+
+        .cv-tech-badge {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            padding: 1px 8px;
+            border-radius: 3px;
+            font-size: 8pt;
+            font-weight: 500;
+            color: var(--primary-light);
+        }
+
+        /* Skills */
+        .cv-skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .cv-skill-group h4 {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 3px;
+        }
+
+        .cv-skill-group p {
+            font-size: 8.5pt;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Education */
+        .cv-edu-entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .cv-edu-entry h4 {
+            font-size: 10pt;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .cv-edu-entry p {
+            font-size: 9pt;
+            color: var(--text-light);
+        }
+
+        .cv-edu-entry .cv-entry-date {
+            font-size: 8.5pt;
+        }
+
+        /* Languages & Certs */
+        .cv-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .cv-lang-item, .cv-cert-item {
+            font-size: 9pt;
+            color: var(--text-light);
+            margin-bottom: 3px;
+        }
+
+        .cv-lang-item strong, .cv-cert-item strong {
+            color: var(--text);
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                font-size: 9.5pt;
+            }
+            
+            .cv-container {
+                padding: 20px 30px;
+                max-width: none;
+            }
+
+            .cv-header-left h1 {
+                font-size: 22pt;
+            }
+
+            .cv-print-btn {
+                display: none !important;
+            }
+        }
+
+        /* Print Button (screen only) */
+        .cv-print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 10pt;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(26, 86, 219, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .cv-print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 86, 219, 0.4);
+        }
+
+        .back-link {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            color: var(--primary-light);
+            text-decoration: none;
+            font-size: 10pt;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        @media print {
+            .back-link { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="cv-header">
+            <div class="cv-header-left">
+                <h1>Kamal Assila</h1>
+                <h2>Automation Engineer / Automation Project Engineer / Control Systems</h2>
+            </div>
+            <div class="cv-header-right">
+                <p><i class="fas fa-envelope"></i> <a href="mailto:kamalassila4@gmail.com">kamalassila4@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> +212 6 66 79 81 64</p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/assila-kamal/" target="_blank">linkedin.com/in/assila-kamal</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Morocco — Open to opportunities worldwide</p>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="cv-summary">
+            <p>Automation Engineer with 3 years of experience in the automotive industry (Stellantis, Valeo, Kostal). Specialized in PLC programming, commissioning and optimization of automated lines and industrial project management. Confirmed experience in production environment, debugging, continuous improvement and technical coordination with suppliers. Oriented industrial performance, reliability of equipment and compliance with quality and safety standards.</p>
+        </div>
+
+        <!-- Experience -->
+        <div class="cv-section">
+            <h3 class="cv-section-title"><i class="fas fa-briefcase"></i> Professional Experience</h3>
+
+            <!-- Valeo -->
+            <div class="cv-entry">
+                <div class="cv-entry-header">
+                    <span class="cv-entry-title">Automation Engineer</span>
+                    <span class="cv-entry-date">2026 — Present</span>
+                </div>
+                <div class="cv-entry-company">Expleo Group → Client: <strong>Valeo</strong></div>
+                <div class="cv-entry-mission">Troubleshot and optimized automated production equipment to improve performance and minimize downtime.</div>
+                <ul>
+                    <li>Improve automated production machines performance and reliability on the shop floor.</li>
+                    <li>Program and optimize PLCs using <strong>Unity Pro, TIA Portal, TwinCAT</strong> and <strong>Sysmac Studio</strong>.</li>
+                    <li>Troubleshoot automation and electrical issues on-site promptly.</li>
+                    <li>Implement corrective actions to reduce machine stoppages.</li>
+                    <li>Collaborate with production and maintenance teams for equipment modifications.</li>
+                </ul>
+                <div class="cv-tech-line">
+                    <span class="cv-tech-badge">PLC</span>
+                    <span class="cv-tech-badge">TIA Portal</span>
+                    <span class="cv-tech-badge">TwinCAT</span>
+                    <span class="cv-tech-badge">Sysmac Studio</span>
+                    <span class="cv-tech-badge">Unity Pro</span>
+                    <span class="cv-tech-badge">Electrical</span>
+                </div>
+            </div>
+
+            <!-- Kostal -->
+            <div class="cv-entry">
+                <div class="cv-entry-header">
+                    <span class="cv-entry-title">Automation Expert</span>
+                    <span class="cv-entry-date">2025 — 2026</span>
+                </div>
+                <div class="cv-entry-company">Expleo Group → Client: <strong>Kostal</strong></div>
+                <div class="cv-entry-mission">Maintain and optimize automated production lines through PLC programming, supplier and cost management, troubleshooting, and technical coordination.</div>
+                <ul>
+                    <li>Maintain and improve automated production lines for efficiency and reliability.</li>
+                    <li>Program and optimize PLCs using <strong>TIA Portal</strong> and <strong>TwinCAT</strong>.</li>
+                    <li>Diagnose technical issues to <strong>reduce machine downtime by 15%</strong>.</li>
+                    <li>Lead continuous improvement initiatives on <strong>seven automated production lines</strong>.</li>
+                    <li>Coordinate with suppliers and external partners for technical activities.</li>
+                    <li>Program and configure industrial vision systems (<strong>Keyence, Cognex</strong>).</li>
+                    <li>Participate in machine commissioning, testing, and startup.</li>
+                </ul>
+                <div class="cv-projects">
+                    <h5>Key Project: PDPC</h5>
+                    <ul>
+                        <li>Control buttons (boutons de commande) for Peugeot 208, 3008 and 2008.</li>
+                    </ul>
+                </div>
+                <div class="cv-tech-line">
+                    <span class="cv-tech-badge">PLC</span>
+                    <span class="cv-tech-badge">TIA Portal</span>
+                    <span class="cv-tech-badge">TwinCAT</span>
+                    <span class="cv-tech-badge">PFMEA</span>
+                    <span class="cv-tech-badge">Keyence</span>
+                    <span class="cv-tech-badge">Cognex</span>
+                </div>
+            </div>
+
+            <!-- Stellantis -->
+            <div class="cv-entry">
+                <div class="cv-entry-header">
+                    <span class="cv-entry-title">Automation Business Pilot</span>
+                    <span class="cv-entry-date">2024 — 2025</span>
+                </div>
+                <div class="cv-entry-company">Expleo Group → Client: <strong>Stellantis</strong></div>
+                <div class="cv-entry-mission">Managed industrial automation projects for automotive production lines from concept to commissioning.</div>
+                <ul>
+                    <li>Define machine requirements and prepare technical specifications and supplier scopes.</li>
+                    <li>Coordinate up to <strong>7 suppliers</strong>, contractors, and engineering teams.</li>
+                    <li>Oversee technical activities, ensuring delivery within budget, schedule, and quality targets.</li>
+                    <li>Monitor project progress and report KPIs to stakeholders.</li>
+                    <li>Validate technical documentation (electrical drawings, PLC architectures, automation deliverables).</li>
+                    <li>Train production and maintenance teams on new automation installations.</li>
+                </ul>
+                <div class="cv-projects">
+                    <h5>Key Projects</h5>
+                    <ul>
+                        <li><strong>O2X (ST40):</strong> Installation and commissioning of two robotic cells for vehicle part flame treatment and glueing.</li>
+                        <li><strong>O2X (ST60):</strong> Robotic glazing cell for vehicle windshield bonding and servo-driven glass handling.</li>
+                        <li><strong>Three Wheeler:</strong> Automated conveyor system for pallet transfer between production areas.</li>
+                        <li><strong>Pick-to-Light:</strong> Barcode-driven Pick-to-Light system for correct part selection and assembly.</li>
+                    </ul>
+                </div>
+                <div class="cv-tech-line">
+                    <span class="cv-tech-badge">PLC</span>
+                    <span class="cv-tech-badge">TIA Portal</span>
+                    <span class="cv-tech-badge">AutoCAD</span>
+                    <span class="cv-tech-badge">SEE Electrical</span>
+                    <span class="cv-tech-badge">Fanuc Robotics</span>
+                    <span class="cv-tech-badge">Siemens</span>
+                    <span class="cv-tech-badge">IFM</span>
+                </div>
+            </div>
+
+            <!-- AI Inside Private -->
+            <div class="cv-entry">
+                <div class="cv-entry-header">
+                    <span class="cv-entry-title">Automation & Electrical Specialist</span>
+                    <span class="cv-entry-date">03/2023 — 01/2024</span>
+                </div>
+                <div class="cv-entry-company"><strong>AI Inside Private SARL</strong></div>
+                <div class="cv-entry-mission">Design, program, install, and commission automated machines by integrating PLCs, motors, sensors, and electrical systems.</div>
+                <ul>
+                    <li>Design and develop industrial automation machines using <strong>SolidWorks</strong>.</li>
+                    <li>Program <strong>Siemens PLCs and HMIs</strong> with TIA Portal.</li>
+                    <li>Design electrical systems, create schematics, and build control cabinets.</li>
+                    <li>Integrate motors, sensors, pneumatics, and industrial networks.</li>
+                    <li>Install, commission, and troubleshoot automated production equipment.</li>
+                    <li>Ensure compliance with client requirements, safety standards, and production targets.</li>
+                    <li>Select electrical and pneumatic components for automation projects.</li>
+                    <li>Support machine optimization and provide on-site technical assistance.</li>
+                </ul>
+                <div class="cv-tech-line">
+                    <span class="cv-tech-badge">PLC</span>
+                    <span class="cv-tech-badge">TIA Portal</span>
+                    <span class="cv-tech-badge">AutoCAD</span>
+                    <span class="cv-tech-badge">SolidWorks</span>
+                    <span class="cv-tech-badge">Electrical</span>
+                    <span class="cv-tech-badge">Pneumatics</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="cv-section">
+            <h3 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+
+            <div class="cv-edu-entry">
+                <div>
+                    <h4>Master's Degree — Electrical and Embedded Systems Engineering</h4>
+                    <p>The National School of Applied Sciences, Kenitra</p>
+                </div>
+                <span class="cv-entry-date">09/2023 — 06/2025</span>
+            </div>
+
+            <div class="cv-edu-entry">
+                <div>
+                    <h4>Bachelor's Degree — Electrical Engineering & Industrial Computing</h4>
+                    <p>Faculty of Sciences and Technologies, Mohammedia</p>
+                </div>
+                <span class="cv-entry-date">09/2022 — 06/2023</span>
+            </div>
+
+            <div class="cv-edu-entry">
+                <div>
+                    <h4>Specialized Technician Diploma — Electromechanics of Automated Systems</h4>
+                    <p>Specialized Institute of Mohammedia Industries</p>
+                </div>
+                <span class="cv-entry-date">09/2020 — 06/2022</span>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="cv-section">
+            <h3 class="cv-section-title"><i class="fas fa-cogs"></i> Technical Skills</h3>
+            <div class="cv-skills-grid">
+                <div class="cv-skill-group">
+                    <h4>Automation & PLC</h4>
+                    <p>Siemens, Schneider, Omron, Beckhoff, SCADA, HMI</p>
+                </div>
+                <div class="cv-skill-group">
+                    <h4>Software Tools</h4>
+                    <p>TIA Portal, STEP7, TwinCAT, Sysmac Studio, Unity Pro, AutoCAD, SEE Electrical, SolidWorks</p>
+                </div>
+                <div class="cv-skill-group">
+                    <h4>Vision Systems</h4>
+                    <p>Keyence, Cognex, Machine Vision, Quality Inspection</p>
+                </div>
+                <div class="cv-skill-group">
+                    <h4>Robotics & Integration</h4>
+                    <p>Fanuc Robots, Pneumatics, Sensors, Motors & Drives, IFM</p>
+                </div>
+                <div class="cv-skill-group">
+                    <h4>Engineering & Management</h4>
+                    <p>Project Management (CAPEX), FMEA, Reliability Engineering, Commissioning, Industrial Diagnostics, Supplier Coordination</p>
+                </div>
+                <div class="cv-skill-group">
+                    <h4>Industrial Networks</h4>
+                    <p>Profinet, Ethernet/IP, Modbus, EtherCAT</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Languages & Certificates -->
+        <div class="cv-two-col">
+            <div class="cv-section">
+                <h3 class="cv-section-title"><i class="fas fa-language"></i> Languages</h3>
+                <p class="cv-lang-item"><strong>Arabic</strong> — Native</p>
+                <p class="cv-lang-item"><strong>French</strong> — Fluent</p>
+                <p class="cv-lang-item"><strong>English</strong> — Fluent</p>
+            </div>
+
+            <div class="cv-section">
+                <h3 class="cv-section-title"><i class="fas fa-certificate"></i> Certificates</h3>
+                <p class="cv-cert-item"><strong>Industrial Automation</strong> — LinkedIn Learning</p>
+                <p class="cv-cert-item"><strong>Siemens S7-1200 PLC & HMI</strong> — Udemy</p>
+                <p class="cv-cert-item"><strong>IOT Data Analytics</strong> — Udemy</p>
+                <p class="cv-cert-item"><strong>Electrical Systems: Panel Boards, Frequency Drives, Transformers</strong> — LinkedIn Learning</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Print Button -->
+    <button class="cv-print-btn" onclick="window.print()">
+        <i class="fas fa-print"></i> Print / Save as PDF
+    </button>
+    <a href="index.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+</body>
+</html>
